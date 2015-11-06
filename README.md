@@ -1,7 +1,9 @@
 # lsl_remoteCam
 Lsl script to remotely control camera.
 
-Camera movement functions made by Jeff Kelley
+Camera movement functions made by Jeff Kelley.
+
+Remote mechanism made by ssm2017 Binder.
 
 ## What is the concept ?
 Several people located on a region can have their viewer's camera controlled by a "director".
