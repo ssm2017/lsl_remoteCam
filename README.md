@@ -40,24 +40,31 @@ The default listener channel for gestures is : -1123
 
 ### play
 This action enables the camera.
+
 ex : `/-1123 play`
 
 ### stop
 This action disables the camera.
+
 ex : `/-1123 play`
 
 ### record
 This action is displaying in the owner's chat the camera value.
+
 ex : `/-1123 record`
+
 ex of output :
+
 `/-1123 values <149.033564,126.035378,23.916243>|<0.010002,0.108740,-0.091046,0.989842>`
 
 ### values
 This action sends the values to all the cameras in the chat range.
+
 ex : `/-1123 values <149.033564,126.035378,23.916243>|<0.010002,0.108740,-0.091046,0.989842>`
 
 ### time
 This actions changes the time for the camera to go from start point to end point.
+
 ex : `/-1123 time 4`
 
 
