@@ -7,6 +7,8 @@ Camera movement functions made by Jeff Kelley
 Several people located on a region can have their viewer's camera controlled by a "director".
 
 ## How to use ?
+Put the script in an object, put the "director" uuid in the description, wear the object (hud).
+
 The script is resetted when wearing so to reset it, unwear and wear again.
 
 ### Director side
