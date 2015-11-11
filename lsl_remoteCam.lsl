@@ -56,27 +56,27 @@ setCameraAt(vector pos,rotation rot)
     CameraRot = rot;
 }
 
-float easeInOutSinus(float x)
+float getRatio(float x)
 {
-    return 0.5 * (1 - llSin ((x+0.5)*PI));
-}
-
-float easeInOutQuadratic(float x)
-{
-    if (x < 0.5)    return 2 * x*x;
-    else            return 1 - 2 * (1-x)*(1-x);
-}
-
-float easeInOutCubic(float x)
-{
-    if (x < 0.5)    return 4 * x*x*x;
-    else            return 1 - 4 * (1-x)*(1-x)*(1-x);
-}
-
-float easeInOutQuartic(float x)
-{
-    if (x < 0.5)    return 8 * x*x*x*x;
-    else            return 1 - 8 * (1-x)*(1-x)*(1-x)*(1-x);
+	if (EASE_SELECTED == 1) // easeInOutSinus
+	{
+		return 0.5 * (1 - llSin ((x+0.5)*PI));
+	}
+	else if (EASE_SELECTED == 2) // easeInOutQuadratic
+	{
+		if (x < 0.5)    return 2 * x*x;
+    	else 			return 1 - 2 * (1-x)*(1-x);
+	}
+	else if (EASE_SELECTED == 3) // easeInOutQuartic
+	{
+		if (x < 0.5)    return 8 * x*x*x*x;
+    	else            return 1 - 8 * (1-x)*(1-x)*(1-x)*(1-x);
+	}
+	else // easeInOutCubic
+	{
+		if (x < 0.5)    return 4 * x*x*x;
+    	else            return 1 - 4 * (1-x)*(1-x)*(1-x);
+	}
 }
 
 // Interpolates between two rotation values in a linear fashion
@@ -117,7 +117,7 @@ Camera_Dolly(vector pos,rotation rot,float dur)
     for (i=0; i<=frames; i++)
     {
         float ratio = (float)i/frames;
-        ratio = easeInOutCubic(ratio);
+        ratio = getRatio(ratio);
         vector   p = pos0 + (pos-pos0)*ratio;
         rotation r = rLin (rot0,rot,ratio);
         setCameraAt (p,r);
