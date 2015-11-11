@@ -71,5 +71,13 @@ This actions changes the time for the camera to go from start point to end point
 
 ex : `/-1123 time 4`
 
+### ease
+This actions changes the moving path for the camera to go from start point to end point.
 
-### record
+Values can be :
+  * 0 : easeInOutCubic (default)
+  * 1 : easeInOutSinus
+  * 2 : easeInOutQuadratic
+  * 3 : easeInOutQuartic
+
+ex : `/-1123 ease 2`
